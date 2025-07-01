@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Actualización de Libros</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+				<div class="col-6 col-sm-4">
+		<h1>Edición de Prestamos</h1>
+		
+		<form th:action="@{/libroPre/{id}(id=${libroP.id})}" th:object="${libroP}" method="post">
+			
+			<div class="form-group">
+						<label>Nombre de Usuario</label> 
+						<input type="text" name="usuario_prestamo" th:field="*{usuario_prestamo}"
+							class="form-control"  placeholder="Digite Nombre de Usuario">
+					</div>
+			
+			
+					<div class="form-group">
+						<label>Nombre de Libro</label> 
+						<input type="text" name="libro_prestamo" th:field="*{libro_prestamo}"
+						class="form-control"  placeholder="Digite Nombre de Libro">
+								</div>
+			
+					<div class="form-group">
+						<label>Fecha de prestamo</label> 
+						<input type="date" name="Fecha_prestamo" th:field="*{Fecha_prestamo}"
+						class="form-control"  placeholder="Digite Fecha de prestamo">
+							</div>
+										
+					<div class="form-group">
+						<label>fecha de vencimiento</label> 
+						<input type="date" name="Fecha_vencimiento" th:field="*{Fecha_vencimiento}"
+						class="form-control"  placeholder="Digite Fecha de vencimiento">
+							</div>
+		
+		<button type="submit" class="btn btn-primary">Registrar</button>
+		</form>
+		<div th:text="${mensaje}"></div>
+	</div>
+	
+</body>
+</html>
